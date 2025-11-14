@@ -44,11 +44,6 @@ map('n', '<C-f>', '/', { silent = true })                -- Ctrl+F → Start sea
 map('v', '<C-f>', '/', { silent = true })                -- Ctrl+F → Search selection
 
 -- ============================
--- Terminal toggle 
--- ============================
-map('n', '<C-/>', ':terminal<CR>', { silent = true })    -- Ctrl+/ → Open terminal
-
--- ============================
 -- Swap j and k 
 -- ============================
 map({'n', 'v', 'o'}, 'j', 'k', { noremap = true, silent = true })
@@ -88,7 +83,7 @@ vim.keymap.set("n", "<C-k>", "<C-w>j", { desc = "Move down (swapped)" })
 local term_win = nil
 local term_buf = nil
 
-vim.keymap.set("n", "<leader>/", function()
+vim.keymap.set("n", "<leader><CR>", function()
   -- If terminal window exists and is valid, close it
   if term_win and vim.api.nvim_win_is_valid(term_win) then
     vim.api.nvim_win_close(term_win, true)
